@@ -1,6 +1,18 @@
-### how to use ###
+### ruby roots_setup.rb --help ###
 
-`ruby roots_setup.rb --help`
+```
+    -h, --help                       Show this help message
+    -s, --site-url=URL               The url of the client site address eg "coolproject.com"
+    -o, --organisation-url=URL       your organisations url name eg "websprung.com"
+    -p, --mail-password=PASSWORD     mail password (leave blank to have one auto generated)
+    -m, --mail-service=SERVICE       transactional email service can be: "mailgun", "sendgrid" (defaults to: mailgun)
+    -a, --acf-key=KEY                OPTIONAL Advanced Custom Fields license key if available. Leave blank to skip this part of setup
+    -t, --roots-repo=USERNAME        OPTIONAL alternative repository to pull trellis + bedrock from. defaults to "roots"
+    -g, --github-usernames=foo,bar   OPTIONAL github usernames comma seperated to retrieve public keys (will default to local public keys if left blank).
+    -r, --repo=REPO                  OPTIONAL select remote repository. will setup remote using organisation name. leave blank to skip. can be "bitbucket" or "github"
+```
+
+### how to use ###
 
 download into your sites folder (or whatever folder you keep sites/projects)
 
