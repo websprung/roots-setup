@@ -221,8 +221,8 @@ Tools.rename_placeholders_by_file("trellis/hosts/production",
 
 if $opts[:acf].present?
   puts '** Adding ACF Key'
-  File.open("trellis/group_vars/all/vault.yml", 'a') do |f|
-    f << "acf_pro_key: #{$opts[:acf]}\n"
+  File.open("trellis/group_vars/development/vault.yml", 'a') do |f|
+    f << "      acf_pro_key: #{$opts[:acf]}\n"
   end
   File.open("trellis/group_vars/staging/vault.yml", 'a') do |f|
     f << "      acf_pro_key: #{$opts[:acf]}\n"
@@ -245,7 +245,7 @@ if $?.exitstatus > 0
   exit(1)
 end
 
-Tools.in_project('ansible-vault encrypt group_vars/all/vault.yml && ansible-vault encrypt group_vars/staging/vault.yml && ansible-vault encrypt group_vars/production/vault.yml',
+Tools.in_project('ansible-vault encrypt group_vars/all/vault.yml && ansible-vault encrypt group_vars/development/vault.yml && ansible-vault encrypt group_vars/staging/vault.yml && ansible-vault encrypt group_vars/production/vault.yml',
                  'trellis',
                  'ansible encrypt in all vault files')
 if $?.exitstatus > 0
